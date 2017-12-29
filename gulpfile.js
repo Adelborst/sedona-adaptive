@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const del = require('del');
 const concat = require('gulp-concat');
@@ -102,7 +103,6 @@ gulp.task('js', function () {
 
 // Оптимизация изображений
 gulp.task('images', function () {
-  const imagemin = require('gulp-imagemin');
   const jpegoptim = require('imagemin-jpegoptim');
 
   console.log('Оптимизация изображений...');
@@ -119,6 +119,20 @@ gulp.task('images', function () {
       })
     ]))
     .pipe(gulp.dest('build/img'));
+});
+
+// Конвертация контентных изображений в формат WebP
+gulp.task('webp', function () {
+  const webp = require('imagemin-webp');
+
+  console.log('Конвертирование изображений в формат WebP...');
+
+  return gulp.src('src/img/content/**/*.jpg')
+    .pipe(imagemin([
+      webp({quality: 80})
+    ]))
+    .pipe(rename({extname: '.webp'}))
+    .pipe(gulp.dest('build/img/content'));
 });
 
 // Сборка SVG спрайта
@@ -158,5 +172,5 @@ gulp.task('deploy', function () {
 
 // Сборка проекта
 gulp.task('build', function (callback) {
-  run('clean:build', 'copy:build', 'style', 'js', 'images', 'sprite', 'clean:icons', callback);
+  run('clean:build', 'copy:build', 'style', 'js', 'images', 'webp', 'sprite', 'clean:icons', callback);
 });
