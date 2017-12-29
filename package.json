@@ -38,6 +38,7 @@
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
     "imagemin-jpegoptim": "^5.1.0",
+    "imagemin-webp": "^4.1.0",
     "run-sequence": "^2.2.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0"
