@@ -1,0 +1,38 @@
+.page-header__image-wrapper {
+  position: relative;
+  padding-top: 90px;
+  min-height: 299px;
+  background-color: @bg-color-back;
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-position: center bottom;
+  background-size: image-size("../img/bg-back-mobile@1x.jpg");
+
+  @media @retina {
+    background-image: url("../img/bg-back-mobile@2x.jpg");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 26px;
+    background-image: url("../img/bg-intro-triangle-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.page-header__image {
+  display: block;
+  margin: 0 auto;
+  width: 229px;
+  height: 39px;
+
+  &--index {
+    width: 282px;
+    height: 214px;
+  }
+}

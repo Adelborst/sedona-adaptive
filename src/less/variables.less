@@ -1,0 +1,36 @@
+@mobile-width: 320px;
+@tablet-width: 768px;
+@desktop-width: 1200px;
+
+@tablet-max-width: (@desktop-width - 1);
+
+@retina-dpi: 144dpi;
+
+@mobile: ~"(min-width: @{mobile-width})";
+@tablet: ~"(min-width: @{tablet-width})";
+@desktop: ~"(min-width: @{desktop-width})";
+
+@tablet-only: ~"(max-width: @{tablet-max-width})";
+
+@retina: ~"(min-resolution: @{retina-dpi})";
+
+@font-family-base: "PT Sans", "Arial", sans-serif;
+@font-size-base: 14px;
+@line-height-base: 21px;
+
+@black: #000000;
+@white: #ffffff;
+
+@bg-color-button: #81b3d2;
+@bg-color-button--hover: #669ec0;
+@bg-color-button--active: #5496bd;
+@bg-colol-button--disabled: #e5e5e5;
+
+@bg-color-back: #ddebf4;
+@bg-color-map: #eeeeee;
+
+@border-color-item: #d6d6d6;
+
+@font-color-base: #333333;
+@font-color-secondary: @white;
+@font-color-heading: @black;
