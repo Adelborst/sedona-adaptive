@@ -40,7 +40,7 @@
       </nav>
 
       <div class="page-header__image-wrapper">
-        <img class="page-header__image" src="img/text-sedona.svg" width="229" height="39" alt="Добро пожаловать в Седону">
+        <img class="page-header__image" src="img/text-sedona.svg" width="230" height="40" alt="Добро пожаловать в Седону">
       </div>
     </header>
 
@@ -50,7 +50,7 @@
         <p class="page-main__text">Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике</p>
       </header>
 
-      <section class="page-main__photo-gallery photo-gallery">
+      <section class="page-main__photo-gallery">
         <h2 class="visually-hidden">Галерея фотографий</h2>
 
         <article class="photo photo--full">
@@ -61,7 +61,7 @@
               <source type="image/webp" srcset="img/content/photo-sunset-mobile@1x.webp 1x, img/content/photo-sunset-mobile@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/content/photo-sunset-desktop@1x.jpg 1x, img/content/photo-sunset-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/content/photo-sunset-tablet@1x.jpg 1x, img/content/photo-sunset-tablet@2x.jpg 2x">
-              <img src="img/content/photo-sunset-mobile@1x.jpg" srcset="img/content/photo-sunset-mobile@2x.jpg 2x" alt="Неродные просторы">
+              <img class="photo__image" src="img/content/photo-sunset-mobile@1x.jpg" srcset="img/content/photo-sunset-mobile@2x.jpg 2x" alt="Неродные просторы">
             </picture>
           </a>
 
@@ -71,10 +71,10 @@
 
             <div class="photo__likes">
               <button class="button-like" type="button">
-                <span class="visually-hidden">Нравится!</span>
                 <svg class="button-like__icon" width="22" height="20" alt="Нравится">
                   <use xlink:href="img/symbols.svg#icon-like"></use>
                 </svg>
+                <span class="visually-hidden">Нравится!</span>
               </button>
               <span class="photo__like-count">1350</span>
             </div>
@@ -89,7 +89,7 @@
               <source type="image/webp" srcset="img/content/photo-cactus-mobile@1x.webp 1x, img/content/photo-cactus-mobile@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/content/photo-cactus-desktop@1x.jpg 1x, img/content/photo-cactus-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/content/photo-cactus-tablet@1x.jpg 1x, img/content/photo-cactus-tablet@2x.jpg 2x">
-              <img src="img/content/photo-cactus-mobile@1x.jpg" srcset="img/content/photo-cactus-mobile@2x.jpg 2x" alt="Местная растительность">
+              <img class="photo__image" src="img/content/photo-cactus-mobile@1x.jpg" srcset="img/content/photo-cactus-mobile@2x.jpg 2x" alt="Местная растительность">
             </picture>
           </a>
 
@@ -117,7 +117,7 @@
               <source type="image/webp" srcset="img/content/photo-roads-mobile@1x.webp 1x, img/content/photo-roads-mobile@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/content/photo-roads-desktop@1x.jpg 1x, img/content/photo-roads-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/content/photo-roads-tablet@1x.jpg 1x, img/content/photo-roads-tablet@2x.jpg 2x">
-              <img src="img/content/photo-roads-mobile@1x.jpg" srcset="img/content/photo-roads-mobile@2x.jpg 2x" alt="Дорога на север">
+              <img class="photo__image" src="img/content/photo-roads-mobile@1x.jpg" srcset="img/content/photo-roads-mobile@2x.jpg 2x" alt="Дорога на север">
             </picture>
           </a>
 
@@ -145,7 +145,7 @@
               <source type="image/webp" srcset="img/content/photo-bridge-mobile@1x.webp 1x, img/content/photo-bridge-mobile@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/content/photo-bridge-desktop@1x.jpg 1x, img/content/photo-bridge-desktop@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/content/photo-bridge-tablet@1x.jpg 1x, img/content/photo-bridge-tablet@2x.jpg 2x">
-              <img src="img/content/photo-bridge-mobile@1x.jpg" srcset="img/content/photo-bridge-mobile@2x.jpg 2x" alt="Мост дьявола">
+              <img class="photo__image" src="img/content/photo-bridge-mobile@1x.jpg" srcset="img/content/photo-bridge-mobile@2x.jpg 2x" alt="Мост дьявола">
             </picture>
           </a>
 
@@ -166,8 +166,8 @@
         </article>
       </section>
 
-      <section class="page-main__video-gallery video-gallery">
-        <header class="video-gallery__header">
+      <section class="page-main__video-gallery">
+        <header class="page-main__header page-main__header--video">
           <h2 class="page-main__title">Все еще сомневаетесь?</h2>
           <p class="page-main__text">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
         </header>
@@ -179,35 +179,36 @@
             <source type="image/webp" srcset="img/content/video-mobile@1x.webp 1x, img/content/video-mobile@2x.webp 2x">
             <source media="(min-width: 1200px)" srcset="img/content/video-desktop@1x.jpg 1x, img/content/video-desktop@2x.jpg 2x">
             <source media="(min-width: 768px)" srcset="img/content/video-tablet@1x.jpg 1x, img/content/video-tablet@2x.jpg 2x">
-            <img src="img/content/video-mobile@1x.jpg" srcset="img/content/video-mobile@2x.jpg 2x" alt="Мост дьявола">
+            <img class="video__image" src="img/content/video-mobile@1x.jpg" srcset="img/content/video-mobile@2x.jpg 2x" alt="Мост дьявола">
           </picture>
 
-          <div class="controls-panel">
-            <button class="controls-panel__button controls-panel__button--replay" type="button">
-              <span class="visually-hidden">Воспроизвести заново</span>
-              <svg class="controls-panel__icon" width="16" height="20" alt="Заново">
-                <use xlink:href="img/symbols.svg#icon-video-replay"></use>
-              </svg>
-            </button>
-
-            <div class="controls-panel__track">
-              <div class="controls-panel__scale"></div>
-              <div class="controls-panel__handle"></div>
+          <div class="video-controls video__panel">
+            <div class="video-controls__scale">
+              <button class="video-controls__handle" type="button"></button>
             </div>
 
-            <button class="controls-panel__button controls-panel__button--subtitles" type="button">
-              <span class="visually-hidden">Субтитры</span>
-              <svg class="controls-panel__icon" width="32" height="20" alt="Субтитры">
-                <use xlink:href="img/symbols.svg#icon-video-subtitles"></use>
-              </svg>
-            </button>
+            <div class="video-controls__buttons">
+              <button class="video-controls__button video-controls__button--replay" type="button">
+                <span class="visually-hidden">Воспроизвести заново</span>
+                <svg class="video-controls__icon video-controls__icon--replay" width="16" height="20" alt="Заново">
+                  <use xlink:href="img/symbols.svg#icon-video-replay"></use>
+                </svg>
+              </button>
 
-            <button class="controls-panel__button controls-panel__button--fullscreen" type="button">
-              <span class="visually-hidden">Полный экран</span>
-              <svg class="controls-panel__icon" width="20" height="20" alt="Полный экран">
-                <use xlink:href="img/symbols.svg#icon-video-fullscreen"></use>
-              </svg>
-            </button>
+              <button class="video-controls__button video-controls__button--subtitles" type="button">
+                <span class="visually-hidden">Субтитры</span>
+                <svg class="video-controls__icon video-controls__icon--subtitles" width="32" height="20" alt="Субтитры">
+                  <use xlink:href="img/symbols.svg#icon-video-subtitles"></use>
+                </svg>
+              </button>
+
+              <button class="video-controls__button video-controls__button--fullscreen" type="button">
+                <span class="visually-hidden">Полный экран</span>
+                <svg class="video-controls__icon video-controls__icon--fullscreen" width="20" height="20" alt="Полный экран">
+                  <use xlink:href="img/symbols.svg#icon-video-fullscreen"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </article>
       </section>
