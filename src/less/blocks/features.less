@@ -1,0 +1,60 @@
+.features__main {
+  position: relative;
+  padding-top: 19px;
+
+  &:first-of-type::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 37px;
+    background-image: url("../img/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.features__description {
+  padding: 37px 20px 26px;
+  color: @font-color-secondary;
+  background-color: @bg-color-button;
+  text-align: center;
+
+  &--first {
+    padding-top: 57px;
+  }
+}
+
+.features__subtitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 26px;
+  color: @font-color-heading;
+
+  &--main {
+    color: @font-color-secondary;
+  }
+}
+
+.features__number {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.features__text {
+  margin-top: 16px;
+}
+
+.features__image-wrapper {
+  min-height: 260px;
+  font-size: 0;
+}
+
+.features__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

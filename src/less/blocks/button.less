@@ -1,0 +1,29 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  padding: 16px 10px;
+  border: none;
+  font: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  color: @font-color-secondary;
+  line-height: 26px;
+  text-align: center;
+  text-transform: inherit;
+  text-decoration: none;
+  background-color: @bg-color-button;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @bg-color-button--hover;
+  }
+
+  &:active {
+    color: fade(@font-color-secondary, 30%);
+    background-color: @bg-color-button--active;
+  }
+
+  &:disabled {
+    background-color: @bg-color-button--disabled;
+  }
+}
