@@ -9,6 +9,15 @@
   @media @retina {
     background-image: url("../img/bg-map-mobile@2x.jpg");
   }
+
+  @media @tablet {
+    background-image: url("../img/bg-map-tablet@1x.jpg");
+    background-size: image-size("../img/bg-map-tablet@1x.jpg");
+
+    @media @retina {
+      background-image: url("../img/bg-map-tablet@2x.jpg");
+    }
+  }
 }
 
 .map__marker {

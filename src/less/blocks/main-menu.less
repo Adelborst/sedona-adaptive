@@ -3,6 +3,11 @@
 
   &--menu-closed {
     display: none;
+
+    @media @tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -12,17 +17,52 @@
   background-color: @bg-color-button;
   .ps-inner-shadow(#ffffff; 20%; 90deg; 1px; 0; 0);
 
+  @media @tablet {
+    flex-basis: 20%;
+    color: @font-color-base;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &:nth-child(4n+3) {
+    @media @tablet {
+      margin-left: auto;
+    }
+  }
+
   &:not(:last-child) {
     border-bottom: 1px solid fade(#010101, 20%);
+
+    @media @tablet {
+      border-bottom: none;
+    }
   }
 
   &:not(&--active):hover {
     background-color: @bg-color-button--hover;
+
+    @media @tablet {
+      color: @bg-color-button;
+      background-color: transparent;
+    }
   }
 
   &:not(&--active):active {
     color: fade(@font-color-secondary, 30%);
     background-color: @bg-color-button--active;
+
+    @media @tablet {
+      color: fade(@font-color-heading, 30%);
+      background-color: transparent;
+    }
+  }
+
+  &--active {
+    color: fade(@font-color-item--active, 50%);
+
+    @media @tablet {
+      color: @font-color-item--active;
+    }
   }
 }
 
@@ -32,8 +72,18 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 40px;
+
+  @media @tablet {
+    padding: 15px 20px 15px;
+    font-size: 14px;
+    line-height: 26px;
+  }
 }
 
 .main-menu__item:last-child .main-menu__link {
   box-shadow: 0 -7px 7px -7px fade(@black, 20%) inset;
+
+  @media @tablet {
+    box-shadow: none;
+  }
 }

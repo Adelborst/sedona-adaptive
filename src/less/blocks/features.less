@@ -2,6 +2,12 @@
   position: relative;
   padding-top: 19px;
 
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 37px;
+  }
+
   &:first-of-type::before {
     content: "";
     position: absolute;
@@ -13,14 +19,30 @@
     background-image: url("../img/bg-triangle.svg");
     background-repeat: no-repeat;
     background-size: 100% auto;
+
+    @media @tablet {
+      content: none;
+    }
+  }
+
+  &--reverse {
+    @media @tablet {
+      flex-direction: row-reverse;
+    }
   }
 }
 
 .features__description {
+  box-sizing: border-box;
   padding: 37px 20px 26px;
   color: @font-color-secondary;
   background-color: @bg-color-button;
   text-align: center;
+
+  @media @tablet {
+    padding: 45px 20px 26px;
+    width: 33.333333%;
+  }
 
   &--first {
     padding-top: 57px;
@@ -34,6 +56,10 @@
   line-height: 26px;
   color: @font-color-heading;
 
+  @media @tablet {
+    font-size: 21px;
+  }
+
   &--main {
     color: @font-color-secondary;
   }
@@ -46,11 +72,22 @@
 
 .features__text {
   margin-top: 16px;
+
+  @media @tablet {
+    margin-top: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .features__image-wrapper {
+  overflow: hidden;
   min-height: 260px;
-  font-size: 0;
+
+  @media @tablet {
+    width: 66.666667%;
+    min-height: 256px;
+  }
 }
 
 .features__image {
