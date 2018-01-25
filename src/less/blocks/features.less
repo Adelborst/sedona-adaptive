@@ -44,13 +44,17 @@
     width: 33.333333%;
   }
 
+  @media @desktop {
+    padding: 53px 45px 26px;
+  }
+
   &--first {
     padding-top: 57px;
   }
 }
 
 .features__subtitle {
-  margin: 0;
+  margin: 0 auto;
   font-size: 18px;
   font-weight: bold;
   line-height: 26px;
@@ -58,6 +62,10 @@
 
   @media @tablet {
     font-size: 21px;
+  }
+
+  @media @desktop {
+    max-width: 160px;
   }
 
   &--main {
@@ -80,7 +88,16 @@
   }
 }
 
+.features__text-break {
+  display: none;
+
+  @media @desktop {
+    display: inline;
+  }
+}
+
 .features__image-wrapper {
+  position: relative;
   overflow: hidden;
   min-height: 260px;
 
@@ -94,4 +111,10 @@
   display: block;
   max-width: 100%;
   height: auto;
+
+  @media @desktop {
+    position: absolute;
+    top: 57%;
+    transform: translateY(-54%);
+  }
 }
