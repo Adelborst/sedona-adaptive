@@ -52,7 +52,7 @@
 
       <form class="form-feedback" action="https://echo.htmlacademy.ru" method="post">
         <fieldset class="form-feedback__fieldset form-feedback__fieldset--name">
-          <legend class="form-feedback__legend">Представьтесь:</legend>
+          <legend class="form-feedback__legend form-feedback__legend--name">Представьтесь:</legend>
 
           <ul class="form-feedback__input-wrapper">
             <li class="form-feedback__input-block">
@@ -71,7 +71,9 @@
         </fieldset>
 
         <fieldset class="form-feedback__fieldset form-feedback__fieldset--contacts">
-          <legend class="form-feedback__legend">Контактная информация:</legend>
+          <legend class="form-feedback__legend form-feedback__legend--contacts">
+            <span class="form-feedback__striked-text">Контактная информация:</span>
+          </legend>
 
           <ul class="form-feedback__input-wrapper">
             <li class="form-feedback__input-block form-feedback__input-block--contacts form-feedback__input-block--phone">
@@ -86,7 +88,7 @@
         </fieldset>
 
         <fieldset class="form-feedback__fieldset form-feedback__fieldset--impression">
-          <legend class="form-feedback__legend">Ваше общее впечатление:</legend>
+          <legend class="form-feedback__legend form-feedback__legend--impression">Ваше общее впечатление:</legend>
 
           <ul class="form-feedback__input-wrapper">
             <li class="form-feedback__input-block form-feedback__input-block--impression">
@@ -105,9 +107,11 @@
         </fieldset>
 
         <fieldset class="form-feedback__fieldset form-feedback__fieldset--achivments">
-          <legend class="form-feedback__legend">Посещенные достопримечательности:</legend>
+          <legend class="form-feedback__legend form-feedback__legend--achivments">
+            <span class="form-feedback__striked-text">Посещенные достопримечательности:</span>
+          </legend>
 
-          <ul class="form-feedback__input-wrapper">
+          <ul class="form-feedback__input-wrapper form-feedback__input-wrapper--achivments">
             <li class="form-feedback__input-block form-feedback__input-block--achivments">
               <input class="form-feedback__checkbox" type="checkbox" name="bridge" id="bridge" checked>
               <label class="form-feedback__label-checkbox" for="bridge">Мост Дьявола</label>
@@ -128,7 +132,9 @@
         </fieldset>
 
         <fieldset class="form-feedback__fieldset form-feedback__fieldset--emotions">
-          <legend class="form-feedback__legend">Опишите свои эмоции:</legend>
+          <legend class="form-feedback__legend form-feedback__legend--emotions">
+            <span class="form-feedback__striked-text">Опишите свои эмоции:</span>
+          </legend>
 
           <textarea class="form-feedback__textarea form-feedback__input-text" name="message" placeholder="Опишите подробно все свои восторги"></textarea>
         </fieldset>
