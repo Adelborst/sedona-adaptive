@@ -1,7 +1,7 @@
 {
-  "name": "gulp-project-template",
+  "name": "sedona",
   "version": "1.0.0",
-  "description": "Базовый шаблон проекта со сборкой на Gulp",
+  "description": "Проект «Седона» от HTML Academy",
   "main": "index.js",
   "scripts": {
     "stylelint": "stylelint \"src/less/**/*.less\" --syntax less",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/andreysgra/gulp-project-template.git"
+    "url": "git+ssh://git@github.com:andreysgra/sedona-adaptive.git"
   },
   "author": "Andrey Grachev <andreysgra@gmail.com> (https://github.com/andreysgra)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andreysgra/gulp-project-template/issues"
+    "url": "https://github.com/andreysgra/sedona-adaptive/issues"
   },
-  "homepage": "https://github.com/andreysgra/gulp-project-template#readme",
+  "homepage": "https://github.com/andreysgra/sedona-adaptive#readme",
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "browser-sync": "^2.21.0",
