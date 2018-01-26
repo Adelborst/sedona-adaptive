@@ -10,6 +10,11 @@
     padding-left: 60px;
     padding-right: 60px;
   }
+
+  @media @desktop {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 }
 
 .form-feedback__fieldset {
@@ -31,6 +36,11 @@
       padding-bottom: 47px;
       width: 266px;
     }
+
+    @media @desktop {
+      padding-bottom: 44px;
+      width: 42%;
+    }
   }
 
   &--contacts {
@@ -41,6 +51,11 @@
       padding-top: 25px;
       padding-bottom: 29px;
       width: 100%;
+    }
+
+    @media @desktop {
+      padding-top: 74px;
+      padding-bottom: 27px;
     }
   }
 
@@ -53,6 +68,11 @@
       padding-top: 58px;
       padding-bottom: 47px;
       width: 325px;
+    }
+
+    @media @desktop {
+      padding-bottom: 44px;
+      width: 50%;
     }
 
     &::after {
@@ -76,6 +96,10 @@
       width: 100%;
       padding-top: 44px;
       padding-bottom: 36px;
+    }
+
+    @media @desktop {
+      padding-bottom: 34px;
     }
   }
 
@@ -104,10 +128,19 @@
     margin-bottom: 0;
   }
 
-  &--name,
+  &--name {
+    @media @tablet {
+      text-align: left;
+    }
+  }
+
   &--impression {
     @media @tablet {
       text-align: left;
+    }
+
+    @media @desktop {
+      padding-left: 80px;
     }
   }
 }
@@ -124,9 +157,13 @@
     @media @tablet {
       content: "";
       flex-shrink: 0;
-      width: 123px;
+      width: 19%;
       height: 1px;
       background-color: @bg-color-striked;
+    }
+
+    @media @desktop {
+      width: 29%;
     }
   }
 
@@ -156,6 +193,19 @@
       padding-left: 95px;
       padding-right: 75px;
     }
+
+    @media @desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--contacts {
+    @media @desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -175,6 +225,11 @@
       margin-bottom: 25px;
     }
 
+    @media @desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -185,15 +240,31 @@
       background-color: #e6e6e6;
       background-repeat: no-repeat;
       background-position: center;
+
+      @media @desktop {
+        top: 0;
+      }
     }
   }
 
-  &--phone::after {
-    background-image: url("../img/icon-phone.svg");
+  &--phone {
+    @media @desktop {
+      width: 400px;
+    }
+
+    &::after {
+      background-image: url("../img/icon-phone.svg");
+    }
   }
 
-  &--email::after {
-    background-image: url("../img/icon-mail.svg");
+  &--email {
+    @media @desktop {
+      width: 480px;
+    }
+
+    &::after {
+      background-image: url("../img/icon-mail.svg");
+    }
   }
 
   &--impression {
@@ -214,6 +285,10 @@
     @media @tablet {
       margin-bottom: 31px;
       width: 220px;
+    }
+
+    @media @desktop {
+      width: 203px;
     }
   }
 
@@ -249,6 +324,18 @@
   &--contacts {
     margin-bottom: 5px;
     padding-left: 22px;
+
+    @media @desktop {
+      margin-right: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.form-feedback__label-aux {
+  @media @desktop {
+    display: none;
   }
 }
 
@@ -269,7 +356,7 @@
     width: 56px;
     height: 56px;
     border-radius: 3px;
-    background-color: @bg-color-video-panel;
+    background-color: @bg-color-body;
 
     @media @tablet {
       border-radius: 5px;
@@ -323,7 +410,7 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background-color: @bg-color-video-panel;
+    background-color: @bg-color-body;
   }
 
   &::after {
@@ -364,8 +451,8 @@
   font-size: 18px;
   font-weight: 700;
   color: @font-color-heading;
-  border: 4px solid @bg-color-video-panel;
-  background-color: @bg-color-video-panel;
+  border: 4px solid @bg-color-body;
+  background-color: @bg-color-body;
 
   &:hover {
     border-color: @border-color-photo;
@@ -380,6 +467,10 @@
 
   &--contacts {
     padding-right: 75px;
+
+    @media @desktop {
+      width: 316px;
+    }
   }
 }
 
@@ -416,14 +507,22 @@
     width: 100%;
     padding: 39px 0 62px;
   }
+
+  @media @desktop {
+    padding-bottom: 67px;
+  }
 }
 
 .form-feedback__button {
   width: 100%;
 
   @media @tablet {
-    width: 324px;
+    width: 50%;
   }
+
+  // @media @desktop {
+  //   width: 50%;
+  // }
 }
 
 .form-feedback__notification {

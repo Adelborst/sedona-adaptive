@@ -1,11 +1,12 @@
 .photo {
+  position: relative;
   padding: 23px 20px 19px;
   border-bottom: 1px solid @border-color-photo;
 
   @media @tablet {
     padding: 0;
     border-bottom: none;
-    background-color: @bg-color-video-panel;
+    background-color: @bg-color-body;
   }
 
   &:nth-of-type(odd):not(:first-of-type) {
@@ -42,8 +43,17 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
-    padding-bottom: 16px;
     padding-right: 20px;
+    padding-bottom: 16px;
+  }
+
+  @media @desktop {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: ~"calc(100% - 20px * 2)";
+    color: @font-color-secondary;
+    background-color: fade(@black, 30%);
   }
 }
 
@@ -58,6 +68,10 @@
   font-size: 14px;
   font-weight: 700;
   color: @font-color-heading;
+
+  @media @desktop {
+    color: @font-color-secondary;
+  }
 }
 
 .photo__author {
@@ -86,5 +100,9 @@
   @media @tablet {
     align-self: auto;
     margin-left: 9px;
+  }
+
+  @media @desktop {
+    color: @font-color-secondary;
   }
 }

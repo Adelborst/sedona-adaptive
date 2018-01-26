@@ -9,10 +9,14 @@
 
 .main-nav__logo {
   position: absolute;
+  z-index: 10;
   left: 50%;
   bottom: -28px;
   transform: translateX(-50%);
-  z-index: 10;
+
+  @media @tablet {
+    bottom: auto;
+  }
 }
 
 .main-nav__toggle {
