@@ -1255,6 +1255,7 @@ a {
           box-sizing: border-box;
   padding: 12px 17px;
   width: 100%;
+  min-width: 150px;
   font: inherit;
   font-size: 18px;
   font-weight: 700;
@@ -1473,7 +1474,7 @@ a {
   }
   .page-main__text {
     margin-top: 31px;
-    max-width: 440px;
+    max-width: 444px;
   }
   .page-main__text--index {
     margin: 27px auto 0;
@@ -1851,7 +1852,7 @@ a {
   }
   .form-feedback__textarea {
     padding-top: 12px;
-    padding-bottom: 1px;
+    padding-bottom: 12px;
     min-height: 160px;
   }
   .form-feedback__submit-wrapper {
@@ -1998,8 +1999,12 @@ a {
     background-image: url("../img/bg-map-desktop@1x.jpg");
     background-size: 1200px 350px;
   }
+  .page-footer__copyright {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
   .page-footer__copyright-text {
-    margin-left: auto;
     margin-right: 13px;
   }
   .page-footer__copyright-link {
