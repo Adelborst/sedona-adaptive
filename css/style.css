@@ -1087,6 +1087,9 @@ a {
 .form-feedback__fieldset--achivments {
   padding-bottom: 1px;
 }
+.form-feedback__fieldset--emotions {
+  min-height: 210px;
+}
 .form-feedback__legend {
   float: left;
   margin-bottom: 21px;
@@ -1256,6 +1259,7 @@ a {
   padding: 12px 17px;
   width: 100%;
   min-width: 150px;
+  min-height: 58px;
   font: inherit;
   font-size: 18px;
   font-weight: 700;
@@ -1725,7 +1729,7 @@ a {
             order: 1;
     padding-top: 58px;
     padding-bottom: 47px;
-    width: 266px;
+    width: 41%;
   }
   .form-feedback__fieldset--contacts {
     -webkit-box-ordinal-group: 3;
@@ -1764,9 +1768,10 @@ a {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
-    width: 100%;
     padding-top: 57px;
     padding-bottom: 11px;
+    width: 100%;
+    min-height: 194px;
   }
   .form-feedback__legend {
     float: none;
@@ -2041,7 +2046,7 @@ a {
   }
   .form-feedback__fieldset--name {
     padding-bottom: 44px;
-    width: 42%;
+    width: 41.5%;
   }
   .form-feedback__fieldset--contacts {
     padding-top: 74px;
@@ -2097,7 +2102,6 @@ a {
     width: 203px;
   }
   .form-feedback__label--contacts {
-    margin-right: 0;
     margin-bottom: 0;
     padding-left: 0;
   }
