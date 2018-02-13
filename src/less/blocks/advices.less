@@ -1,39 +1,39 @@
 .advices {
-  padding-top: 24px;
-  padding-bottom: 5px;
-  padding-right: 20px;
-
-  .list-reset(70px);
+  margin: 0 auto;
+  padding: 24px 20px 23px;
+  width: 280px;
+  list-style: none;
 
   @media @tablet {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    width: auto;
   }
 }
 
 .advices__item {
   position: relative;
   margin-bottom: 27px;
+  padding-left: 50px;
   box-sizing: border-box;
 
   @media @tablet {
     margin-bottom: 0;
-    padding: 150px 45px 10px;
+    padding: 150px 45px 47px;
     width: 33.333333%;
     text-align: center;
   }
 
   @media @desktop {
-    // padding: 150px 45px 10px;
-    padding-bottom: 31px;
+    padding-bottom: 68px;
   }
 
   &::before {
     content: "";
     position: absolute;
-    top: -9px;
-    left: -50px;
+    top: -10px;
+    left: 0;
     width: 40px;
     height: 40px;
     background-repeat: no-repeat;
@@ -100,12 +100,14 @@
 
 .advices__title {
   margin-top: 10px;
+  margin-bottom: 15px;
   font-size: 18px;
   font-weight: bold;
   line-height: 26px;
   color: @font-color-heading;
 
   @media @tablet {
+    margin-bottom: 17px;
     font-size: 21px;
   }
 }
