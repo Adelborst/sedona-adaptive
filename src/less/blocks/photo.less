@@ -1,12 +1,17 @@
 .photo {
   position: relative;
-  padding: 23px 20px 19px;
+  padding: 22px 6.25% 21px;
   border-bottom: 1px solid @border-color-photo;
 
   @media @tablet {
     padding: 0;
+    width: 50%;
     border-bottom: none;
     background-color: @bg-color-body;
+  }
+
+  @media @desktop {
+    width: 33.333333%;
   }
 
   &:nth-of-type(odd):not(:first-of-type) {
@@ -19,7 +24,12 @@
     border-top: 1px solid @border-color-photo;
 
     @media @tablet {
+      width: 100%;
       border-top: none;
+    }
+
+    @media @desktop {
+      width: 100%;
     }
   }
 }
@@ -35,16 +45,14 @@
 }
 
 .photo__information {
-  padding-top: 16px;
+  padding-top: 15px;
   line-height: 24px;
 
   @media @tablet {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 16px;
+    padding: 16px 20px;
   }
 
   @media @desktop {

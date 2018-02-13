@@ -34,7 +34,10 @@ svg4everybody();
 // Google карта
 function initMap() {
   var latLng = new google.maps.LatLng(34.868633, -111.761734);
-  var mapMarker = 'img/icon-map-marker.svg';
+  var mapMarker = {
+    url: 'img/icon-map-marker.svg',
+    size: new google.maps.Size(27, 27)
+  };
 
   var mapOptions = {
     center: latLng,

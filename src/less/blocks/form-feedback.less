@@ -18,8 +18,9 @@
 }
 
 .form-feedback__fieldset {
+  position: relative;
   margin: 0;
-  padding: 18px 20px 5px;
+  padding: 65px 6.25% 5px;
   border: 0;
   border-top: 1px solid @border-color-photo;
 
@@ -55,24 +56,22 @@
 
     @media @desktop {
       padding-top: 74px;
-      padding-bottom: 27px;
+      padding-bottom: 30px;
     }
   }
 
   &--impression {
-    position: relative;
     padding-bottom: 16px;
 
     @media @tablet {
       order: 0;
       padding-top: 58px;
-      padding-bottom: 47px;
-      width: 325px;
+      padding-bottom: 48px;
+      width: 50%;
     }
 
     @media @desktop {
-      padding-bottom: 44px;
-      width: 50%;
+      padding-bottom: 47px;
     }
 
     &::after {
@@ -89,26 +88,28 @@
   }
 
   &--achivments {
-    padding-bottom: 1px;
+    padding-top: 88px;
+    padding-bottom: 0;
 
     @media @tablet {
       order: 3;
       width: 100%;
       padding-top: 44px;
-      padding-bottom: 36px;
+      padding-bottom: 34px;
     }
 
     @media @desktop {
+      padding-top: 42px;
       padding-bottom: 34px;
     }
   }
 
   &--emotions {
-    min-height: 210px;
+    padding-top: 62px;
 
     @media @tablet {
       order: 4;
-      padding-top: 57px;
+      padding-top: 58px;
       padding-bottom: 11px;
       width: 100%;
       min-height: 194px;
@@ -117,8 +118,9 @@
 }
 
 .form-feedback__legend {
-  float: left;
-  margin-bottom: 21px;
+  position: absolute;
+  left: 0;
+  top: 18px;
   width: 100%;
   font-size: 18px;
   font-weight: 700;
@@ -126,9 +128,8 @@
   text-align: center;
 
   @media @tablet {
-    float: none;
+    position: static;
     font-size: 21px;
-    margin-bottom: 0;
   }
 
   &--name {
@@ -189,10 +190,11 @@
   clear: both;
 
   &--achivments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     @media @tablet {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       padding-left: 95px;
       padding-right: 75px;
     }
@@ -222,10 +224,10 @@
     position: relative;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 
     @media @tablet {
-      margin-bottom: 25px;
+      margin-bottom: 23px;
     }
 
     @media @desktop {
@@ -236,7 +238,7 @@
     &::after {
       content: "";
       position: absolute;
-      top: 31px;
+      top: 33px;
       right: 0;
       width: 58px;
       height: 58px;
@@ -257,6 +259,7 @@
 
     &::after {
       background-image: url("../img/icon-phone.svg");
+      background-size: 18px 18px;
     }
   }
 
@@ -267,27 +270,25 @@
 
     &::after {
       background-image: url("../img/icon-mail.svg");
+      background-size: 16px 16px;
     }
   }
 
   &--impression {
     margin-bottom: 14px;
-    padding-top: 15px;
-    padding-bottom: 14px;
 
     @media @tablet {
-      margin-bottom: 24px;
+      margin-bottom: 23px;
     }
   }
 
   &--achivments {
-    margin-bottom: 23px;
-    padding-top: 13px;
-    padding-bottom: 17px;
+    margin-bottom: 24px;
+    width: 280px;
 
     @media @tablet {
-      margin-bottom: 31px;
-      width: 220px;
+      margin-bottom: 32px;
+      width: 46%;
     }
 
     @media @desktop {
@@ -325,7 +326,7 @@
   margin-right: 15px;
 
   &--contacts {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     padding-left: 22px;
 
     @media @desktop {
@@ -344,7 +345,10 @@
 .form-feedback__label-checkbox {
   position: relative;
   display: block;
+  padding-top: 13px;
+  padding-bottom: 17px;
   padding-left: 78px;
+  width: 100%;
   font-size: 18px;
   font-weight: 700;
   text-transform: none;
@@ -370,7 +374,7 @@
     position: absolute;
     display: none;
     left: 17px;
-    top: 2px;
+    top: 17px;
     transform: rotate(-45deg);
     width: 19px;
     height: 9px;
@@ -389,6 +393,11 @@
   &:active::after {
     opacity: 0.3;
   }
+
+  &:focus {
+    outline: 4px solid @bg-color-body;
+    outline-offset: 2px;
+  }
 }
 
 .form-feedback__checkbox:checked + .form-feedback__label-checkbox::after {
@@ -398,10 +407,21 @@
 .form-feedback__label-radio {
   position: relative;
   display: block;
+  padding-top: 15px;
+  padding-bottom: 14px;
   padding-left: 78px;
+  width: 100%;
   font-size: 18px;
   font-weight: 700;
   text-transform: none;
+
+  @media @tablet {
+    width: 70%;
+  }
+
+  @media @desktop {
+    width: 80%;
+  }
 
   &::before {
     content: "";
@@ -426,6 +446,11 @@
     transform: translateY(-50%);
     border-radius: 50%;
     background-color: @font-color-base;
+  }
+
+  &:focus {
+    outline: 4px solid @bg-color-body;
+    outline-offset: 2px;
   }
 
   &:hover::before {
@@ -488,9 +513,9 @@
 }
 
 .form-feedback__textarea {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  min-height: 155px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  min-height: 160px;
   resize: horizontal;
 
   @media @tablet {
@@ -501,7 +526,7 @@
 }
 
 .form-feedback__submit-wrapper {
-  padding: 39px 20px 37px;
+  padding: 37px 6.25% 37px;
 
   @media @tablet {
     display: flex;
@@ -513,7 +538,7 @@
   }
 
   @media @desktop {
-    padding-bottom: 67px;
+    padding-bottom: 65px;
   }
 }
 
