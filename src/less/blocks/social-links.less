@@ -13,16 +13,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 46px;
-  height: 48px;
+  width: 42px;
+  height: 44px;
+  border: 2px solid @bg-color-button;
   background-color: @bg-color-button;
 
   &:hover {
+    border-color: @bg-color-button--hover;
     background-color: @bg-color-button--hover;
   }
 
   &:active {
+    border-color: @bg-color-button--active;
     background-color: @bg-color-button--active;
+  }
+
+  &:focus {
+    border-color: @bg-color-button--hover;
+    outline: 0;
   }
 }
 
