@@ -1,8 +1,8 @@
 {
   "name": "sedona",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "Проект «Седона» от HTML Academy",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "stylelint": "stylelint src/less/**/*.less --syntax less",
     "test": "gulp lintspaces && npm run stylelint",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/andreysgra/sedona-adaptive#readme",
   "devDependencies": {
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.1.0",
     "browser-sync": "^2.23.6",
     "css-mqpacker": "^6.0.2",
     "del": "^3.0.0",
@@ -41,11 +41,10 @@
     "imagemin-webp": "^4.1.0",
     "run-sequence": "^2.2.1",
     "stylelint": "^9.1.1",
-    "stylelint-config-standard": "^18.1.0"
+    "stylelint-config-standard": "^18.2.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
-    "npm": "^5.7.1",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.9"
   },
