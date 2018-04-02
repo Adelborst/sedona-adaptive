@@ -47,8 +47,7 @@ function initMap() {
       position: google.maps.ControlPosition.LEFT_TOP
     },
     scrollwheel: false,
-    disableDefaultUI: true,
-    center: latLng
+    disableDefaultUI: true
   };
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
