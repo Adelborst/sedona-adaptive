@@ -9,14 +9,38 @@ const concat = require('gulp-concat');
 const run = require('run-sequence');
 const browserSync = require('browser-sync').create();
 
+let rootDirs = {
+  src: 'src/',
+  build: 'build/'
+}
+
+let projectDirs = {
+  src: {
+    root: rootDirs.src,
+    style: rootDirs.src + 'less/',
+    js: rootDirs.src + 'js/',
+    img: rootDirs.src + 'img/',
+    webp: rootDirs.src + 'img/content/',
+    fonts: rootDirs.src + 'fonts/'
+  },
+  build: {
+    root: rootDirs.build ,
+    css: rootDirs.build + 'css/',
+    js: rootDirs.build + 'js/',
+    img: rootDirs.build + 'img/',
+    webp: rootDirs.build + 'img/content/',
+    icons: rootDirs.build + 'img/icons/'
+  }
+};
+
 // Удаление каталога сборки
 gulp.task('clean:build', function () {
-  return del('build');
+  return del(projectDirs.build.root);
 });
 
 // Удаление каталога иконок для SVG спрайта
 gulp.task('clean:icons', function () {
-  return del('build/img/icons');
+  return del(projectDirs.build.img + 'icons');
 });
 
 // Копирование файлов
@@ -24,17 +48,17 @@ gulp.task('copy:build', function () {
   console.log('Копирование файлов...');
 
   return gulp.src([
-      'src/fonts/**/*.{woff,woff2}',
-      'src/*.html'
+      projectDirs.src.fonts + '**/*.{woff,woff2}',
+      projectDirs.src.root + '*.html'
     ], {
-      base: 'src'
+      base: projectDirs.src.root
     })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest(projectDirs.build.root));
 });
 
 gulp.task('copy:html', function () {
-  return gulp.src('src/*.html')
-    .pipe(gulp.dest('build'))
+  return gulp.src(projectDirs.src.root + '*.html')
+    .pipe(gulp.dest(projectDirs.build.root))
     .pipe(browserSync.stream());
 });
 
@@ -43,13 +67,13 @@ gulp.task('lintspaces', function () {
   const lintspaces = require('gulp-lintspaces');
 
   return gulp.src([
-      'src/*.html',
+      projectDirs.src.root + '*.html',
       '*.json',
       '*.js',
       '*.md',
-      'src/**/*.js',
-      'src/img/**/*.svg',
-      'src/less/**/*.less'
+      projectDirs.src.root + '**/*.js',
+      projectDirs.src.img + '**/*.svg',
+      projectDirs.src.style + '**/*.less'
     ])
     .pipe(lintspaces({editorconfig: '.editorconfig'}))
     .pipe(lintspaces.reporter());
@@ -70,14 +94,14 @@ gulp.task('style', function () {
 
   console.log('Компиляция стилей...');
 
-  return gulp.src('src/less/style.less')
+  return gulp.src(projectDirs.src.style + 'style.less')
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss(plugins))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest(projectDirs.build.css))
     .pipe(csso({comments: false}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest(projectDirs.build.css))
     .pipe(browserSync.stream());
 });
 
@@ -91,13 +115,13 @@ gulp.task('js', function () {
   return gulp.src([
       'node_modules/picturefill/dist/picturefill.js',
       'node_modules/svg4everybody/dist/svg4everybody.js',
-      'src/js/**/*.js'
+      projectDirs.src.js + '**/*.js'
     ])
     .pipe(concat('index.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest(projectDirs.build.js))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest(projectDirs.build.js))
     .pipe(browserSync.stream());
 });
 
@@ -107,7 +131,7 @@ gulp.task('images', function () {
 
   console.log('Оптимизация изображений...');
 
-  return gulp.src('src/img/**/*.{jpg,png,svg}')
+  return gulp.src(projectDirs.src.img + '**/*.{jpg,png,svg}')
     .pipe(imagemin([
       imagemin.optipng(),
       imagemin.svgo({
@@ -124,7 +148,7 @@ gulp.task('images', function () {
         progressive: true
       })
     ]))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest(projectDirs.build.img));
 });
 
 // Конвертация контентных изображений в формат WebP
@@ -133,12 +157,12 @@ gulp.task('webp', function () {
 
   console.log('Конвертирование изображений в формат WebP...');
 
-  return gulp.src('src/img/content/**/*.jpg')
+  return gulp.src(projectDirs.src.webp + '**/*.jpg')
     .pipe(imagemin([
       webp({quality: 80})
     ]))
     .pipe(rename({extname: '.webp'}))
-    .pipe(gulp.dest('build/img/content'));
+    .pipe(gulp.dest(projectDirs.build.webp));
 });
 
 // Сборка SVG спрайта
@@ -147,23 +171,23 @@ gulp.task('sprite', function () {
 
   console.log('Сборка SVG спрайта...');
 
-  return gulp.src('build/img/icons/*.svg')
+  return gulp.src(projectDirs.build.icons + '*.svg')
     .pipe(svgstore({inlineSvg: true}))
     .pipe(rename('symbols.svg'))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest(projectDirs.build.img));
 });
 
 // Локальный сервер
 gulp.task('serve', function () {
   browserSync.init({
-    server: 'build',
+    server: projectDirs.build.root,
     cors: true,
     notify: false
   });
 
-  gulp.watch('src/less/**/*.less', ['style']);
-  gulp.watch('src/*.html', ['copy:html']);
-  gulp.watch('src/js/*.js', ['js']);
+  gulp.watch(projectDirs.src.style + '**/*.less', ['style']);
+  gulp.watch(projectDirs.src.root + '*.html', ['copy:html']);
+  gulp.watch(projectDirs.src.js + '*.js', ['js']);
 });
 
 // Сборка проекта
