@@ -44,13 +44,10 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.0",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
-    "last 2 versions",
-    "IE 11",
-    "Firefox ESR"
+    "defaults"
   ]
 }
