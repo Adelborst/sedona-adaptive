@@ -121,6 +121,7 @@
   position: absolute;
   left: 0;
   top: 18px;
+  padding: 0;
   width: 100%;
   font-size: 18px;
   font-weight: 700;
@@ -293,30 +294,6 @@
       width: 203px;
     }
   }
-
-  &--achivments:nth-child(1) {
-    @media @tablet {
-      order: 0;
-    }
-  }
-
-  &--achivments:nth-child(2) {
-    @media @tablet {
-      order: 3;
-    }
-  }
-
-  &--achivments:nth-child(3) {
-    @media @tablet {
-      order: 2;
-    }
-  }
-
-  &--achivments:nth-child(4) {
-    @media @tablet {
-      order: 3;
-    }
-  }
 }
 
 .form-feedback__label {
@@ -414,6 +391,7 @@
   text-transform: none;
 
   @media @tablet {
+    margin-right: auto;
     width: 70%;
   }
 
